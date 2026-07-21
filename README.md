@@ -32,11 +32,9 @@ pkacodeweb                      # Start Web Chat in your browser
 > ⚡ No paid APIs required. No subscriptions. Just code with AI.
 
 <p align="center">
-  <a href="pkacode-cli-video.mp4">
-    <img src="pkacode-cli.png" alt="Watch the PKA CODE demo video" style="max-width: 100%; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.15);" width="800">
-  </a>
+  <img src="pkacode-cli.gif" alt="PKA CODE demo animation" style="max-width: 100%; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.15);" width="800">
   <br>
-  <em>▶️ Click the image to watch the demo video — PKA CODE CLI in action</em>
+  <em>PKA CODE in action — CLI interactive mode</em>
 </p>
 
 ---

@@ -1,0 +1,64 @@
+{
+  "name": "pkacode-cli",
+  "version": "1.2.6",
+  "description": "PKA — FREE-only AI CLI (Gemini · Groq · OpenRouter free models)",
+  "type": "module",
+  "bin": {
+    "pka": "dist/index.js",
+    "pkacode": "dist/index.js",
+    "pkacodeweb": "dist/web-entry.js"
+  },
+  "main": "dist/index.js",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "tsx src/index.ts",
+    "prepack": "npm run build"
+  },
+  "keywords": [
+    "cli",
+    "ai",
+    "coding",
+    "assistant",
+    "gemini",
+    "groq",
+    "openrouter",
+    "free",
+    "code",
+    "terminal",
+    "chat",
+    "productivity"
+  ],
+  "license": "MIT",
+  "author": {
+    "name": "CHAN PISETH",
+    "url": "https://github.com/Pisethz"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pisethz/pkacode-cli.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Pisethz/pkacode-cli/issues"
+  },
+  "homepage": "https://github.com/Pisethz/pkacode-cli#readme",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "commander": "^12.1.0",
+    "execa": "^9.5.2",
+    "ora": "^8.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.0",
+    "tsx": "^4.16.0",
+    "typescript": "^5.5.0"
+  }
+}

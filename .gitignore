@@ -31,3 +31,8 @@ basic_javascript.js
 hello.py
 undefined
 nul_backup.txt
+
+package.json
+.gitignore
+tsconfig.json
+package-lock.json

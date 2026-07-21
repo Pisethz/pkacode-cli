@@ -31,6 +31,14 @@ pkacodeweb                      # Start Web Chat in your browser
 
 > ⚡ No paid APIs required. No subscriptions. Just code with AI.
 
+<p align="center">
+  <video src="pkacode-cli.mp4" controls="controls" style="max-width: 100%; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.15);" width="800">
+    Your browser does not support the video tag.
+  </video>
+  <br>
+  <em>PKA CODE in action — CLI interactive mode</em>
+</p>
+
 ---
 
 ## System Requirements
@@ -160,6 +168,12 @@ PKA CODE runs on **all major operating systems**:
 
 ### Terminal CLI
 
+<p align="center">
+  <img src="pkacode-cli.png" alt="PKA CODE CLI screenshot" style="max-width: 100%; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.15);" width="800">
+  <br>
+  <em>Terminal CLI — interactive AI-powered coding in your terminal</em>
+</p>
+
 ```bash
 # 1. Install globally
 npm install -g pkacode-cli
@@ -172,6 +186,12 @@ pkacode -p "read package.json and explain it"
 ```
 
 ### Web Chat (pkacodeweb)
+
+<p align="center">
+  <img src="pkacodeweb.png" alt="PKA CODE Web Chat screenshot" style="max-width: 100%; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.15);" width="800">
+  <br>
+  <em>Web Chat — browser-based AI conversations</em>
+</p>
 
 ```bash
 # 1. Install (if not done already)

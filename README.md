@@ -1,7 +1,7 @@
-# PKA CODE — Terminal AI Coding Assistant
+# PKA CODE — Free AI Coding Assistant (CLI + Web)
 
 <p align="center">
-  <strong>FREE multi-provider AI coding assistant for your terminal</strong>
+  <strong>FREE multi-provider AI coding assistant — works in your terminal AND browser</strong>
 </p>
 
 <p align="center">
@@ -10,11 +10,13 @@
   <a href="./LICENSE"><img src="https://img.shields.io/badge/license-MIT-green" alt="License"></a>
   <img src="https://img.shields.io/badge/platform-Windows%20%7C%20Linux%20%7C%20macOS-blueviolet" alt="Platform">
   <img src="https://img.shields.io/badge/node-%3E%3D18.0.0-brightgreen" alt="Node">
+  <img src="https://img.shields.io/badge/web-pkacodeweb-orange" alt="Web">
 </p>
 
 ```bash
 npm install -g pkacode-cli    # Install globally
-pkacode                        # Start interactive mode
+pkacode                        # Start CLI interactive mode
+pkacodeweb                      # Start Web Chat in your browser
 ```
 
 ```
@@ -25,7 +27,7 @@ pkacode                        # Start interactive mode
 █████       ████ ████ ████▀████      ████▄████ ▀███▄███▀ ████▄███▀ ████▄████
 ```
 
-**PKA CODE** is a **free, open-source** AI coding assistant that runs in your terminal. It can read, write, and edit files, execute commands, search your codebase, and hold multi-turn conversations — all powered by your choice of **FREE AI providers** (Gemini, Groq, OpenRouter).
+**PKA CODE** is a **free, open-source** AI coding assistant that runs in your terminal **and browser**. It can read, write, and edit files, execute commands, search your codebase, and hold multi-turn conversations — all powered by your choice of **FREE AI providers** (Gemini, Groq, OpenRouter, DeepSeek).
 
 > ⚡ No paid APIs required. No subscriptions. Just code with AI.
 
@@ -133,7 +135,8 @@ PKA CODE runs on **all major operating systems**:
 
 ## Features
 
-- **🤖 3 FREE AI Providers** — Gemini · Groq · OpenRouter (free models only)
+- **🌐 2 Interfaces** — Terminal CLI (`pkacode`) and Web Chat (`pkacodeweb`)
+- **🤖 4 FREE AI Providers** — DeepSeek · Gemini · Groq · OpenRouter (free models only)
 - **🎨 Theme System** — Switch between Dark (`🌙`) and Light (`☀️`) themes
   - Dark mode: white AI response bg with black text
   - Light mode: dark gray AI response bg with white text
@@ -155,6 +158,8 @@ PKA CODE runs on **all major operating systems**:
 
 ## Quick Start
 
+### Terminal CLI
+
 ```bash
 # 1. Install globally
 npm install -g pkacode-cli
@@ -165,6 +170,106 @@ pkacode
 # 3. Or ask a single question
 pkacode -p "read package.json and explain it"
 ```
+
+### Web Chat (pkacodeweb)
+
+```bash
+# 1. Install (if not done already)
+npm install -g pkacode-cli
+
+# 2. Launch the Web Chat server
+pkacodeweb
+```
+
+Your browser opens at **http://localhost:3721/chat** — start chatting with DeepSeek V4 Flash instantly, no API key needed.
+
+---
+
+## Web Chat — `pkacodeweb`
+
+The `pkacodeweb` command launches a **browser-based AI chat** interface. One command, instant access.
+
+```bash
+# Start the Web Chat server (browser opens automatically)
+pkacodeweb
+
+# Server starts on port 3721
+# Open: http://localhost:3721/chat
+```
+
+### How It Works
+
+| Step | Action |
+|------|--------|
+| 1 | Run `pkacodeweb` in your terminal |
+| 2 | Express.js server starts on **port 3721** |
+| 3 | Browser opens to **http://localhost:3721/chat** |
+| 4 | Chat instantly with **DeepSeek V4 Flash** — no API key needed |
+| 5 | Or add your own API key in Settings for unlimited access |
+
+### Instant Mode (No API Key)
+
+- Chat instantly with up to **20 messages per hour**
+- Uses the server's built-in API key (OpenRouter → DeepSeek V4 Flash)
+- No signup, no credit card required
+- Perfect for quick questions and exploration
+
+### Unlimited Mode (Your API Key)
+
+- Add your own **OpenRouter**, **Gemini**, or **Groq** API key in Settings
+- No rate limits — use as much as you want
+- Keys stored securely in your browser's localStorage
+- Switch between providers on-the-fly from the dropdown
+
+### Web Chat Features
+
+- **Real-time Streaming** — SSE word-by-word responses
+- **Provider Switching** — Gemini, Groq, OpenRouter, DeepSeek
+- **Model Selection** — Pick any model from the dropdown
+- **Session Saving** — Conversations auto-save to the sidebar
+- **Settings Panel** — API keys, system prompt, temperature, max tokens
+- **Mobile-Responsive** — Touch support, bottom nav, slide-out sidebar
+- **Dark/Light Theme** — Matches your system preference
+
+### Manual Server Start
+
+If you have the source code (from `server/` folder):
+
+```bash
+cd server
+npm install
+node index.js
+```
+
+Then open **http://localhost:3721/chat** in your browser.
+
+### Phone / Tablet Access
+
+The server broadcasts on your local network:
+```
+http://<your-ip>:3721/chat
+```
+Both devices must be on the same WiFi.
+
+### API Endpoints
+
+| Endpoint | Method | Description |
+|----------|--------|-------------|
+| `/api/health` | GET | Server health check |
+| `/api/config` | GET/POST | Read/update configuration |
+| `/api/providers` | GET | List AI providers and models |
+| `/api/chat` | POST | Streaming chat (SSE) |
+| `/api/sessions` | GET/POST | List/save sessions |
+| `/api/sessions/:id` | GET/DELETE | Load/delete a session |
+
+### Vercel Deployment
+
+The `api/` folder contains serverless functions for Vercel:
+```bash
+vercel
+```
+
+---
 
 ### Theme Switching
 
@@ -359,6 +464,7 @@ type %APPDATA%\pka\permissions.json
 pkacode                              # Interactive chat mode
 pkacode "your prompt"                # Single-prompt mode
 pkacode -p "prompt"                  # Headless print mode
+pkacodeweb                            # Start Web Chat server (opens browser)
 pkacode --help                       # Show help
 pkacode --version                    # Show version
 pkacode theme [dark|light]           # Switch color theme
